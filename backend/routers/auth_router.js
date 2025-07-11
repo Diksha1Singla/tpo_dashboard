@@ -10,7 +10,7 @@ const loginLimiter = rateLimit({
 });
 
 router.route("/").get(auth_controller.home)
-router.route("/login").get(loginLimiter,auth_controller.login)
+router.route("/login").post(loginLimiter,auth_controller.login)
 router.route("/register").post(auth_controller.register)
 
 export default router

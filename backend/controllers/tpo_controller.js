@@ -2,6 +2,16 @@ import { db } from "../db.js";
 
 const isValidEmailType = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
+const getTPO = async(req,res) => {
+  try {
+    const [availData] = await db.execute("SELECT * FROM tpo_dataentries");
+    return res.status(201).json({ message: availData });
+  } catch (error) {
+    console.error("Error:", error);
+    return res.status(500).json({ error: "Internal server error in getTPO" });
+  }
+}
+
 const addTPO = async(req,res) => {
     try {
         const { name, college, email, contact } = req.body;
@@ -36,11 +46,11 @@ const addTPO = async(req,res) => {
           [name, college, email, contact]
         );
     
-        return res.status(201).json({ message: "tpo registered successfully" });
+        return res.status(201).json({ message: "tpo added successfully" });
     
       } catch (error) {
         console.error("Register Error:", error);
-        return res.status(500).json({ error: "Internal server error" });
+        return res.status(500).json({ error: "Internal server error in addTPO" });
       }
 }
 
@@ -69,4 +79,4 @@ const searchTPO = async(req,res) => {
     }
 }
 
-export default {addTPO,searchTPO}
+export default {addTPO, searchTPO, getTPO}
