@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This is a full-stack MERN (MongoDB, Express.js, React, Node.js) application built for the Training & Placement Officer (TPO) Management Portal. The portal allows users to manage TPO details across various colleges. It features a login page, an interactive dashboard, real-time data updates, a search modal, and a modal form to add TPO entries.
+This is a full-stack (Express.js, React, Node.js) using SQL as a DataBase application built for the Training & Placement Officer (TPO) Management Portal. The portal allows users to manage TPO details across various colleges. It features a login page, an interactive dashboard, real-time data updates, a search modal, and a modal form to add TPO entries.
 
 ## Technology Stack
 
